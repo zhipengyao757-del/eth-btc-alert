@@ -1,0 +1,13 @@
+name: Run Monitor
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API
+        run: curl https://eth-btc-alert.vercel.app/api/monitor
